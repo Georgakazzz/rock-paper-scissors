@@ -10,18 +10,27 @@ void choosewinner(char player, char computer);
 
 int main(){
 
+    string opt;
     char player;
     char computer;
 
-    player = getuserchoice();
+    do{
+        player = getuserchoice();
     cout << "your choice is: ";
     showchoice(player); 
 
     computer = getcomputerchoice();
-    cout << "computers choise: ";
+    cout << "computers choise: "; 
     showchoice(computer);
 
     choosewinner(player, computer);
+    cout << "do you want to play again? (yes or no)\n";
+    do{
+    cin >> opt;
+    if(opt != "yes" || opt != "YES"){
+        cout << "enter a valid option (yes or no)";}
+    }while(opt != "yes" && opt != "no" && opt != "YES" && opt != "NO");
+    }while(opt == "yes");
 
     return 0;
 }
